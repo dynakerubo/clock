@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>time interval angularjs tutorial</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	
+
+</head>
+<body style="background-image: url(file:///C:/Users/Student/Downloads/brenda.gif);  background-size: 100% 100%;
+            min-height: 545px; background-repeat: no-repeat;" class="img-responsive" >
+<div ng-app="myApp"  ng-controller="myCtrl">
+
+<p style="font-size:50px; color: #fff; text-align: center; font-family: 'Lobster', cursive; filter: glow(color=#EEEE00,strength=3); text-shadow: #EEEE00 0 0 10px, #FF0000 5px 5px 5px;">The time is out:</p>
+
+<h1 style="color: #fff; text-align: center;font-size: 100px; padding-top: 60px;">{{ theTime |date }}</h1>
+	
+</div>
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $interval) {
+    $scope.theTime = new Date().toLocaleTimeString();
+    $interval(function () {
+        $scope.theTime = new Date().toLocaleTimeString();
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
